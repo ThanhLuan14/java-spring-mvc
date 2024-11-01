@@ -6,8 +6,11 @@ services:
     environment:
       - MYSQL_DATABASE=hoidanit
       - MYSQL_ROOT_PASSWORD=123456
+      - LANG=C.UTF-8
+      - MYSQL_INITDB_CHARSET=utf8mb4
     ports:
       - "3307:3306"
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
     expose:
       - "3306"
